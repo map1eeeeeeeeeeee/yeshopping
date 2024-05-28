@@ -21,11 +21,8 @@
 
 <script setup>
 import { useRouter } from 'vue-router'
-import axios from 'axios';
-import { ref, reactive, onMounted } from 'vue';
+import { ref, reactive} from 'vue';
 import shop3 from '@/api/shop3';
-import HomeTabberVue from './HomeTabber.vue';
-import { showToast } from 'vant';
 import { useRoute } from 'vue-router'
 import { showNotify } from 'vant';
 let show=ref(true)
@@ -52,12 +49,6 @@ function a() {
     })
 
 }
-function x(a) {
-
-    console.log(count)
-
-}
-
 function onClickLeft() {
     router.push("/shopping")
 }

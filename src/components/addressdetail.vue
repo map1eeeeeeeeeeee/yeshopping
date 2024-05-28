@@ -17,7 +17,7 @@ import { useRoute } from 'vue-router';
  
 import { ref, reactive } from 'vue';
 import shop3 from '@/api/shop3';
-import HomeTabber from './HomeTabber.vue';
+
 import { areaList } from '@vant/area-data';
 import { showNotify } from 'vant';
 const route = useRoute()

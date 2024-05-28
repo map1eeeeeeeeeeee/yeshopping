@@ -1,8 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Test from '@/components/Test.vue'
 import GoodsList from '@/components/GoodsList.vue'
-import ShopCart from '@/components/ShopCart.vue'
-import Long from  '@/components/Longin.vue'
+import Login from  '@/components/Login.vue'
+import logout from '@/components/logout.vue'
 import Sp from '@/components/Sp.vue'
 import ShoppingList from "@/components/ShoppingList.vue"
 import address from "@/components/adderss.vue"
@@ -14,18 +13,19 @@ import  register  from "@/components/register.vue"
 const routes = [
   {
     path: '/',
-    component: Long
+    component: Login
   },
   {
     path: '/goodslist',
     component: GoodsList
   },
   {
-    path: '/shopcart',
-    component: ShopCart
-  },{
-    path :'/longin',
-    component: Long
+    path :'/login',
+    component: Login
+  },
+  {
+    path :'/logout',
+    component: logout
   },
   {
     path :'/shopping',

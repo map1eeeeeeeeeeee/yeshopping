@@ -9,7 +9,7 @@
         </van-swipe>
         <van-tabs v-model:active="active" scrollspy sticky>
             <van-tab v-for=" (item, index) in imagedata2" :key="item.id" :title="item.name">
-
+                <div class="card-box">
                 <van-card v-for="(i, index2) in item.sub  " :key=i.id num="0" :price='i.pid' desc="描述信息" :title="i.name"
                     :thumb="i.image">
                     <template #tags>
@@ -23,6 +23,7 @@
                             disable-input min="-1" @minus="g(i.sub.pid, index, index2)" />
                     </template>
                 </van-card>
+            </div>
             </van-tab>
         </van-tabs>
 
@@ -37,8 +38,8 @@
 </template>
 
 <script setup>
-import axios from 'axios';
-import { ref, reactive, onMounted } from 'vue';
+
+import { ref, reactive } from 'vue';
 import shop3 from '@/api/shop3';
 import HomeTabberVue from './HomeTabber.vue';
 
@@ -46,7 +47,7 @@ import HomeTabberVue from './HomeTabber.vue';
 
  
 const cuan = reactive([])
-const tot = ref(0)
+
 const gvc = ref(0)
 const active = ref(0);
 const imagedata = ref("")
@@ -104,11 +105,7 @@ function a(a, b) {
     let bbbb = JSON.parse(window.localStorage.getItem("shopping"))
     console.log(bbbb)
 }
-function show() {
-    let t = 0
-    t++
-    return gvc.value[t]
-}
+
 function g(q, w, e) {
     console.log(q, w, e)
     if (q == 1) {
@@ -132,4 +129,15 @@ getimage(),
 
 </script>
 
-<style scoped></style>
+<style scoped>
+.van-card {
+    width: calc(80% - 10px);
+    margin-bottom: 10px;
+    align-items: center;
+  }
+  .van-box{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  </style>

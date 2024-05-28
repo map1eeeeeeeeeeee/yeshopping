@@ -1,7 +1,7 @@
 <template>
     <div class="address-list">
       <van-nav-bar
-    title="地址列表"
+    title="我的订单"
     left-text="返回"
     left-arrow
     @click-left="onClickLeft"
@@ -26,9 +26,6 @@
   
        
       <div class="a"> 
-      <van-button round block type="primary" native-type="submit" @click="onAdd">
-        新增地址
-      </van-button>
     </div>
     </div>
   </template>
@@ -38,11 +35,9 @@
   
   <script setup>
   import { useRouter } from 'vue-router'
-  import axios from 'axios';
-  import { ref, reactive, onMounted } from 'vue';
+
   import shop3 from '@/api/shop3';
-  import HomeTabberVue from './HomeTabber.vue';
-  import { showToast } from 'vant';
+
   const router = useRouter()
       function getorder(){
         shop3.getorderlist( ).then(res=>{
